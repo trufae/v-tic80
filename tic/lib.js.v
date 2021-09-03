@@ -1,5 +1,13 @@
 module tic
 
+fn JS.tstamp() int
+fn JS.btn(b int) bool
+fn JS.key(b int) bool
+fn JS.cls(c int)
+fn JS.rect(x int, y int, w int, h int, c int)
+fn JS.pix(x int, y int) int
+
+
 // this assumes the default color palete
 pub enum Color {
 	black = 0
@@ -12,12 +20,12 @@ pub enum Color {
 }
 
 pub enum Button {
-	up
-	down
-	left
-	right
-	a
-	b
+	up = 0
+	down = 1
+	left = 2
+	right = 3
+	a = 4
+	b = 5
 }
 
 pub enum Key {
@@ -94,13 +102,12 @@ pub enum Key {
 	alt = 65
 }
 
-pub fn print_(s string, x int, y int) {
+pub fn printxy(s string, x int, y int) {
 	#print(s.str, x.valueOf(), y.valueOf())
-	//  print(s, x, y)
 }
 
-pub fn rect_(x int, y int, w int, h int, c int) {
-	#rect(x.valueOf(), y.valueOf(), w.valueOf(), h.valueOf(), c.valueOf());
+pub fn rectangle(x int, y int, w int, h int, c int) {
+	JS.rect(x, y, w, h, c)
 }
 
 pub fn rectb_(x int, y int, w int, h int, c int) {
@@ -116,21 +123,23 @@ pub fn circb_(x int, y int, radius int, color int) {
 }
 
 // spr id x y [colorkey=-1] [scale=1] [flip=0] [rotate=0] [w=1 h=1]
-pub fn spr_(id int, x int, y int) {
+pub fn sprite(id int, x int, y int) {
 	#spr(id.valueOf(), x.valueOf(), y.valueOf());
 }
 
 pub fn pix_get(x int, y int) int {
 	#return pix(x.valueOf(), y.valueOf());
-	return 0
+	return JS.pix(x, y)
 }
 
 pub fn pix_set(x int, y int, c int) {
+	// JS.pix(x, y, c)
 	#pix(x.valueOf(), y.valueOf(), c.valueOf());
 }
 
-pub fn cls_(n int) {
-	#cls(n.valueOf());
+pub fn clear(n int) {
+	// JS.cls(int(n))
+	#cls(n.valueOf())
 }
 
 pub fn memcpy_(d int, s int, l int) {
@@ -166,21 +175,18 @@ pub fn time_() int {
 	return 0
 }
 
-pub fn tstamp_(a int, v int) int {
-	#return tstamp();
-	return 0
+pub fn timestamp(a int, v int) int {
+	return JS.tstamp()
 }
 
 pub fn trace_(s string) {
 	println(s.str)
 }
 
-pub fn key_(n Key) bool {
-	#return key(n.valueOf())
-	return false
+pub fn keypress(n Key) bool {
+	return JS.key(int(n))
 }
 
-pub fn btn_(n Button) bool {
-	#return btn(n.valueOf())
-	return false
+pub fn button(n Button) bool {
+	return JS.btn(int(n))
 }
