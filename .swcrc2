@@ -1,0 +1,13 @@
+// this kills the real logic TIC code
+
+    "transform": {
+      "optimizer": {
+        "globals": {
+          "vars": {
+            "mytic": "true",
+            "tic": "true",
+            "TIC": "true"
+          }
+        }
+      }
+    },

@@ -13,13 +13,9 @@ Notes
 This is the *work-in-progress* support for V in tic-80.
 
 * V generates 80KB js for a hello world
-  * Use uglify, minify and terser randomly to trim it down to 44KB
-* V depends on ES6 features
-  * Use swc to transpile to ES5 (duktape is used in tic80)
-* V depends on ES2020 js classes (Map, BigInt, ..)
-  * Just prefix the output with stub.js
-* V generates `require` and `process` statements
-  * Workarounded with stub.js but will be fixed in V
+  * Using swc this can be trimmed down to 36KB, but swc doesnt gets rid of es2020
+* V depends on require, process and ES2020 js classes (Map, BigInt, ..)
+  * Just prefix the output with stub.js to workaround this
 * Methods in JS modules may produce name conflicts
   * Workarounded using different names for the pubcic APIs
 

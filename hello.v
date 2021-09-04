@@ -10,7 +10,7 @@ __global state = State{}
 
 [export: 'TIC']
 fn tick(a int) {
-	tic.clear(int(tic.Color.ocean))
+	tic.clear(int(tic.Color.green))
 	tic.printxy('hello V world!', 10, 10)
 	if tic.button(.up) || tic.keypress(.k) {
 		tic.printxy('UP!', 20, 20)

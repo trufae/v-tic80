@@ -1,0 +1,30 @@
+{
+  "jsc": {
+    "minify": {
+      "compress": {
+        "unused": true,
+        "keep_fnames": true,
+        "reduce_vars": true
+      },
+      "mangle": true
+    },
+    "parser": {
+      "syntax": "ecmascript",
+      "jsx": false,
+      "dynamicImport": false,
+      "privateMethod": false,
+      "functionBind": false,
+      "exportDefaultFrom": false,
+      "exportNamespaceFrom": false,
+      "decorators": false,
+      "decoratorsBeforeExport": false,
+      "topLevelAwait": false,
+      "importMeta": false
+    },
+    "target": "es3",
+    "loose": true,
+    "externalHelpers": false,
+    "keepClassNames": true
+  },
+  "minify": true
+}
