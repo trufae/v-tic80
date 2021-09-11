@@ -6,6 +6,7 @@ fn JS.key(b int) bool
 fn JS.cls(c int)
 fn JS.rect(x int, y int, w int, h int, c int)
 fn JS.pix(x int, y int) int
+fn JS.spr(x int, y int, c int, s int, f int, r int, w int, h int)
 
 
 // this assumes the default color palete
@@ -125,6 +126,11 @@ pub fn circb_(x int, y int, radius int, color int) {
 // spr id x y [colorkey=-1] [scale=1] [flip=0] [rotate=0] [w=1 h=1]
 pub fn sprite(id int, x int, y int) {
 	#spr(id.valueOf(), x.valueOf(), y.valueOf());
+}
+
+pub fn sprite_full(id int, x int, y int, color int, scale int, flip int, rotate int, w int, h int) {
+	#spr(id.valueOf(), x.valueOf(), y.valueOf(), color.valueOf(), scale.valueOf(), flip.valueOf(), rotate.valueOf(), w.valueOf(), h.valueOf());
+	// JS.spr(id, x, y, color, scale, flip, rotate, w, h)
 }
 
 pub fn pix_get(x int, y int) int {
