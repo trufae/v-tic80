@@ -5,7 +5,7 @@ This is a hello world app written in V for the TIC-80.
 
 --pancake
 
-![Demo](video0.gif)
+![Demo](examples/hello.gif)
 
 Notes
 -----
