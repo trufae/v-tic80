@@ -2,9 +2,9 @@
   "jsc": {
     "minify": {
       "compress": {
-        "unused": true,
+        "unused": false,
         "keep_fnames": true,
-        "reduce_vars": true
+        "reduce_vars":false 
       },
       "mangle": true
     },
