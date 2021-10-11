@@ -1,7 +1,7 @@
 Module {
 	name: 'tic'
 	author: 'pancake'
-	version: '0.1.0'
+	version: '0.2.0'
 	repo_url: 'https://github.com/trufae/v-tic80'
 	vcs: 'git'
 	tags: ['tic80']
