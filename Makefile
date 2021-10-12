@@ -2,8 +2,7 @@ SRC=examples/witch.v
 
 all: clean tool-swc
 	mkdir tmp
-	# v -enable-globals -b js_browser -o tmp/hello.js hello.v
-	v -enable-globals -b js -o tmp/hello.js $(SRC)
+	v -skip-unused -enable-globals -b js -o tmp/hello.js $(SRC)
 	npx swc -o tmp/final.js tmp/hello.js
 	cat tic/stub.js tmp/final.js > tmp/output.js
 	cat tic/stub.js tmp/hello.js > tmp/output2.js
